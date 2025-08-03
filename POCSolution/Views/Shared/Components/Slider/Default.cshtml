@@ -1,0 +1,55 @@
+﻿@model List<POCSolution.ViewComponents.SlideModel>
+
+<div id="heroSlider" class="carousel slide vh-100" data-bs-ride="carousel" data-bs-interval="5000">
+    <!-- Custom Indicators -->
+    <div class="carousel-indicators custom-indicators position-absolute bottom-0 start-50 translate-middle-x mb-4">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="@i"
+                    class="custom-indicator @(i == 0 ? "active" : "")"
+                    aria-current="@(i == 0 ? "true" : "false")"
+                    aria-label="Slide @(i + 1)">
+            </button>
+        }
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner h-100">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var slide = Model[i];
+            <div class="carousel-item h-100 @(i == 0 ? "active" : "")">
+                <!-- Background Image with Bootstrap utilities -->
+                <div class="position-relative h-100 bg-dark" style="background-image: url('@slide.ImageUrl'); background-size: cover; background-position: center;">
+                    <!-- Bootstrap Overlay -->
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
+
+                    <!-- Content Container with Bootstrap Grid -->
+                    <div class="container-fluid h-100 position-relative">
+                        <div class="row h-100 align-items-center justify-content-end">
+                            <div class="col-12 col-lg-6 col-xl-5">
+                                <!-- Text Content with Bootstrap utilities -->
+                                <div class="text-end text-lg-end text-md-center text-center text-white p-4 p-lg-5">
+                                    <h3 class="display-5 fw-bold mb-4 text-shadow">@slide.Title</h3>
+                                    <p class="lead mb-0 text-shadow">@slide.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Navigation Controls with Bootstrap positioning -->
+    <button class="carousel-control-prev position-absolute top-50 start-0 translate-middle-y ms-4"
+            type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark bg-opacity-50 rounded-circle p-3" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next position-absolute top-50 end-0 translate-middle-y me-4"
+            type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark bg-opacity-50 rounded-circle p-3" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

@@ -1,0 +1,215 @@
+﻿/* Navbar Component CSS */
+
+/* Navbar Alt Border */
+.navbar {
+    border-bottom: 3px solid #dc3545;
+    min-height: 76px;
+}
+
+/* Logo Responsive */
+.navbar-brand img {
+    height: 90px;
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+/* Navbar Toggler Custom */
+.navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    border: 2px solid #dc3545 !important;
+    border-radius: 0.375rem;
+}
+
+    .navbar-toggler:hover {
+        background-color: rgba(220, 53, 69, 0.1);
+    }
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28220, 53, 69, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Navbar Links */
+.nav-link[data-menu] {
+    position: relative;
+    transition: color 0.3s ease;
+    color: #6c757d !important;
+}
+
+    .nav-link[data-menu]:hover {
+        color: #dc3545 !important;
+    }
+
+    .nav-link[data-menu]::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #dc3545;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .nav-link[data-menu]:hover::after {
+        width: 100%;
+    }
+
+/* Search Icon */
+.fas.fa-search {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #6c757d;
+}
+
+    .fas.fa-search:hover {
+        color: #dc3545 !important;
+        transform: scale(1.1);
+    }
+
+/* Language Dropdown */
+#languageDropdown {
+    border: 1px solid #6c757d;
+    color: #6c757d;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    min-width: 80px;
+    transition: all 0.2s ease;
+}
+
+    #languageDropdown:hover {
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: white;
+    }
+
+    #languageDropdown:focus {
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+        border-color: #dc3545;
+    }
+
+.dropdown-menu {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0;
+    min-width: 120px;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+    .dropdown-item:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+
+        .dropdown-item:hover img {
+            transform: scale(1.1);
+        }
+
+    .dropdown-item.active {
+        background-color: #dc3545;
+        color: white;
+    }
+
+    .dropdown-item img {
+        border-radius: 2px;
+        transition: transform 0.2s ease;
+    }
+
+/* Responsive Breakpoints */
+@media (max-width: 991.98px) {
+    /* Large tablets and below */
+    .navbar-brand img {
+        height: 70px;
+    }
+
+    .navbar-collapse {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .nav-item {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-link[data-menu] {
+        padding: 0.75rem 1rem !important;
+        border-radius: 0.375rem;
+        margin-bottom: 0.25rem;
+    }
+
+        .nav-link[data-menu]:hover {
+            background-color: rgba(220, 53, 69, 0.1);
+        }
+
+        .nav-link[data-menu]::after {
+            display: none; /* Mobile'da alt çizgi gösterme */
+        }
+
+    /* Search & Language mobile layout */
+    .navbar-collapse > div:last-child {
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-top: 1px solid #dee2e6;
+        margin-top: 1rem;
+    }
+
+    .fas.fa-search {
+        font-size: 1.25rem;
+        padding: 0.5rem;
+    }
+
+    #languageDropdown {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Mobile phones */
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand img {
+        height: 60px;
+    }
+
+    .container-fluid {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* Small mobile phones */
+    .navbar-brand img {
+        height: 50px;
+    }
+
+    .navbar-toggler {
+        padding: 0.2rem 0.4rem;
+    }
+
+    #languageDropdown {
+        min-width: 70px;
+        font-size: 0.8rem;
+    }
+}

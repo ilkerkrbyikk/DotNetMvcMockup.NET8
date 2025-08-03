@@ -1,0 +1,53 @@
+﻿/* Minimal CSS - Only what Bootstrap can't handle */
+
+/* Custom Red Square Indicators */
+.custom-indicator {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 0 !important;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
+    margin: 0 8px !important;
+    transition: all 0.3s ease !important;
+    text-indent: -999px !important;
+    opacity: 1 !important;
+}
+
+    .custom-indicator.active {
+        background-color: #dc3545 !important;
+        border-color: #dc3545 !important;
+        transform: scale(1.2) !important;
+    }
+
+    .custom-indicator:hover {
+        background-color: rgba(220, 53, 69, 0.8) !important;
+        border-color: #dc3545 !important;
+    }
+
+/* Text Shadow for better readability */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Controls Hover Effect */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(220, 53, 69, 0.8) !important;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .custom-indicator {
+        width: 10px !important;
+        height: 10px !important;
+        margin: 0 6px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-indicator {
+        width: 8px !important;
+        height: 8px !important;
+        margin: 0 4px !important;
+    }
+}
